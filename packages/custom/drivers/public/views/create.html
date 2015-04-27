@@ -1,0 +1,48 @@
+<section data-ng-controller="DriversController">
+  <form name="driverForm" class="form-horizontal col-md-12" role="form" data-ng-submit="create(driverForm.$valid)" novalidate>
+    <accordion close-others="oneAtATime" class="col-md-6">
+
+      <!-- Personal Details -->
+      <accordion-group heading="Personal Details" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+        <div class="form-group" ng-class="{ 'has-error' : submitted && driverForm.title.$invalid }">
+          <label mean-token="'create-title'" class="col-md-3 control-label">First Name</label>
+          <div class="col-md-9">
+            <input name="first_name" type="text" class="form-control" data-ng-model="first_name" id="first_name" placeholder="First Name" required>
+          </div>
+
+          <label mean-token="'create-title'" class="col-md-3 control-label">Last Name</label>
+          <div class="col-md-9">
+            <input name="last_name" type="text" class="form-control" data-ng-model="last_name" id="last_name" placeholder="Last Name" required>
+          </div>
+        </div>
+
+
+        </div>
+      </accordion-group>
+
+
+    <!-- Family Details -->
+      <accordion-group heading="Family Details" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+
+      <div class="form-group" ng-class="{ 'has-error' : submitted && driverForm.title.$invalid }">
+          <label mean-token="'create-title'" class="col-md-3 control-label">First Name</label>
+          <div class="col-md-9">
+            <input name="wife_first_name" type="text" class="form-control" data-ng-model="wife_first_name" id="wife_first_name" placeholder="Wife First Name" required>
+          </div>
+
+          <label mean-token="'create-title'" class="col-md-3 control-label">Last Name</label>
+          <div class="col-md-9">
+            <input name="wife_last_name" type="text" class="form-control" data-ng-model="wife_last_name" id="wife_last_name" placeholder="Wife Last Name" required>
+          </div>
+
+
+      </accordion-group>
+    </accordion>
+
+    <div class="form-group">
+      <div class="col-md-offset-3 col-md-9">
+        <button mean-token="'create-submit'" type="submit" class="btn btn-info">Submit</button>
+      </div>
+    </div>
+  </form>
+</section>

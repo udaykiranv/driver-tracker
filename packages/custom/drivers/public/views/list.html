@@ -1,0 +1,21 @@
+<section data-ng-controller="DriversController" data-ng-init="find()">
+  <ul class="drivers unstyled">
+    <li data-ng-repeat="driver in drivers">
+      <span>{{driver.created | date:'medium'}}</span> /
+      <span>{{driver.user.name}}</span>
+      <h2>
+        <a data-ng-href="#!/drivers/{{driver._id}}">{{driver.title}}</a>
+        <span data-ng-if="hasAuthorization(driver)">
+          <a class="btn" href="/#!/drivers/{{driver._id}}/edit">
+            <i class="glyphicon glyphicon-edit"></i>
+          </a>
+          <a class="btn" data-ng-click="remove(driver);">
+            <i class="glyphicon glyphicon-trash"></i>
+          </a>
+        </span>
+      </h2>
+      <div>{{driver.content}}</div>
+    </li>
+  </ul>
+  <h1 data-ng-hide="!drivers || drivers.length">No drivers yet. <br> Why don't you <a href="/#!/drivers/create">Create One</a>?</h1>
+</section>
