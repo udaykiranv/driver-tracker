@@ -9,17 +9,18 @@ angular.module('mean.drivers', ['ui.bootstrap']).controller('DriversController',
     };
 
     $scope.create = function(isValid) {
+      isValid = true;
       if (isValid) {
         var driver = new Drivers({
-          title: this.title,
-          content: this.content
+          first_name: this.first_name,
+          last_name: this.last_name
         });
         driver.$save(function(response) {
           $location.path('drivers/' + response._id);
         });
 
-        this.title = '';
-        this.content = '';
+        this.first_name = '';
+        this.last_name = '';
       } else {
         $scope.submitted = true;
       }

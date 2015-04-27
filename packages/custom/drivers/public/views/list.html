@@ -3,8 +3,10 @@
     <li data-ng-repeat="driver in drivers">
       <span>{{driver.created | date:'medium'}}</span> /
       <span>{{driver.user.name}}</span>
+      <span>{{driver.first_name}}</span> 
+       <span>{{driver.last_name}}</span>
       <h2>
-        <a data-ng-href="#!/drivers/{{driver._id}}">{{driver.title}}</a>
+        <a data-ng-href="#!/drivers/{{driver._id}}">{{driver.first_name}}</a>
         <span data-ng-if="hasAuthorization(driver)">
           <a class="btn" href="/#!/drivers/{{driver._id}}/edit">
             <i class="glyphicon glyphicon-edit"></i>
@@ -14,7 +16,8 @@
           </a>
         </span>
       </h2>
-      <div>{{driver.content}}</div>
+      <div><span>{{driver.first_name}}</span>  <span>{{driver.last_name}}</span></div>
+
     </li>
   </ul>
   <h1 data-ng-hide="!drivers || drivers.length">No drivers yet. <br> Why don't you <a href="/#!/drivers/create">Create One</a>?</h1>
