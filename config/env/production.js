@@ -27,7 +27,7 @@ db: 'mongodb://uday:uday@ds063809.mongolab.com:63809/heroku_app36265109',
     */
   },
   app: {
-    name: 'MEAN - A Modern Stack - Production'
+    name: 'Driver Tracker - Production'
   },
   logging: {
     format: 'combined'
